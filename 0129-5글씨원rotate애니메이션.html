@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0; position: relative;}
+        body{
+            background: gray;
+        }
+
+        .text{
+            animation: spin 5s linear infinite;
+        }
+        .circle{
+            animation-name: spin;
+            animation-duration: 4000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            
+        }
+        .text-silde{
+            animation: left 1s linear infinite;
+        }
+        
+        @keyframes aa{
+            0%{transform: rotate(0deg);}
+            25%{transform: rotate(90deg);}
+            50%{transform: rotate(180deg);}
+            75%{transform: rotate(270deg);}
+            100%{transform: rotate(360deg);}
+        }
+        @keyframes spin{
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+        @keyframes left{
+            0%{left: 0;}
+            100%{left: -300px;}
+        }
+    </style>
+</head>
+<body>
+
+    <img class="text" src="ani-rotate.png">
+    <img class="circle" src="ani-rotate1.png">
+    <img class="text-silde" src="text%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98.png">
+</body>
+</html>

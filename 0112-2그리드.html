@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*전체선택자*/
+        *{margin: 0; padding: 0; position: relative;}
+        /*태그선택자*/
+        div{border: 3px solid black;}    
+        /*클라스선택자*/
+        .container{border-color: forestgreen;}   
+        /*자식선택자*/
+        body>div{background: gold;}
+        /*자손선택자*/
+        body div{color: hotpink; margin: 10px;}
+        /*순번선택자(구조선택자)*/
+        .item:first-child{background: #11698e;}/*맨첫아이*/
+        .item:last-child{background: #83a95c;}/*맨마지막아이*/
+        .item:nth-child(2n){background: blue;}/*짝수*/
+        .item:nth-child(2n-1){background: white;}/*홀수*/
+        
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 200px);
+        }
+        .col-2{
+            grid-column: span 2;
+        }
+        .row-2{
+            grid-row: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">item1</div>
+        <div class="item col-2">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item row-2">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+        <div class="item">item9</div>
+        <div class="item">item10</div>
+        <div class="item">item11</div>
+        <div class="item">item12</div>
+        <div class="item">item13</div>
+        <div class="item">item14</div>
+        <div class="item">item15</div>
+        <div class="item">item16</div>
+    </div>
+</body>
+</html>

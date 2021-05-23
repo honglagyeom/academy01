@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; position: relative;}/*기억해야할기본값*/
+        
+        .container{
+            display: grid;
+            grid-template-columns: 200px 200px 200px 200px;
+            grid-template-rows: 200px 200px 200px;
+            grid-gap: 10px;
+            grid-auto-flow: dense;
+        }
+        .container .item{
+            border: 2px solid black;
+            background-color: cornflowerblue;}
+        .container .item1{
+            grid-column:3/ span 2;
+        }
+        .container .item2{
+            grid-row: span 2;
+        }
+        .container .item4{
+            background: gold;
+            grid-column: 4;
+            grid-row: 3;/*위치설정*/
+        }
+        .container .item8{
+            grid-column: span 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">item1</div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item4">item4</div>
+        <div class="item item5"></div>
+        <div class="item item6"></div>
+        <div class="item item7"></div>
+        <div class="item item8"></div>
+    </div>
+</body>
+</html>

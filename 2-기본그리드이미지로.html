@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        section{
+            padding-top: 100px;
+            padding-bottom: 150px;
+            background:#f2f2f2;}
+        
+        .grid-container{
+            border: 1px solid red;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+/*            repeat(5,크기width)
+              columns 너비에만 해당 너비각각 계산하기 힘드니까
+              1fr=1flex=같은비율이라고 보면됨
+              flex ratio
+            */
+            grid-gap:20px;
+/*            grid-gap:20px; 이미지사이간격*/
+        }
+         .item img{
+                 width: 100%; 
+                 display:block;
+/*        display:block이미지속성을 블럭화시키는 속성
+    만약 이미지 밑에 공간이 뜨면 이미지를 블럭화시키면 공간없어짐*/
+        }
+        
+/*        미디어쿼리연습*/
+        @media (max-width:1000px){
+            .grid-container{
+                grid-template-columns: repeat(3,1fr);
+                grid-gap: 20px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div class="grid-container">
+            <div class="item item1"><img src="1.jpg" alt=""></div>
+            <div class="item item2"><img src="2.jpg" alt=""></div>
+            <div class="item item3"><img src="3.jpg" alt=""></div>
+            <div class="item item4"><img src="4.jpg" alt=""></div>
+            <div class="item item5"><img src="5.jpg" alt=""></div>
+            <div class="item item6"><img src="6.jpg" alt=""></div>
+            <div class="item item7"><img src="7.jpg" alt=""></div>
+            <div class="item item8"><img src="8.jpg" alt=""></div>
+            <div class="item item9"><img src="9.jpg" alt=""></div>
+            <div class="item item10"><img src="10.jpg" alt=""></div>
+            <div class="item item11"><img src="11.jpg" alt=""></div>
+            <div class="item item12"><img src="12.jpg" alt=""></div>
+        </div>
+    </section>
+</body>
+</html>

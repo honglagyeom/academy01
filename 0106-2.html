@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{padding: 0; margin: 0;}
+        .header{background: gold;}
+        .header .container{
+            max-width: 500px; border: 1px solid red;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .header .icon-list{border: 1px solid black;}
+        .header .icon-list img{
+            margin-left: 10px;
+            width: 30px; /*이미지크기width로 조정, 비율안깨지게 너비만지정*/}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="logo">logo</h1>
+            <div class="icon-list">
+<!--               이미지는 원래 인라인tag 그래서 따로 display: flex; 안넣음-->
+                <img src="0104-img/blue1.png" alt="내용">
+                <img src="0104-img/blue2.png" alt="내용">
+                <img src="0104-img/blue3.png" alt="내용">
+                <img src="0104-img/blue4.png" alt="내용">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 20px;
+        }
+        .box:nth-child(3n) {
+            background-color: gold;
+        }
+        .box:nth-child(3n-1) {
+            background-color: #00ff45;
+        }
+        .box:nth-child(3n-2) {
+            background-color: #00ffc4;
+        }
+        /*
+        block:  줄변경이 되는 태그속성 <div>
+        inline: 줄변경이 안되는 태그 <span> <p> <i>
+        inline-block: <img> <input> <select>
+        */
+        .box1, .box2, .box3, .box4{
+            float: right;     /*둥둥 떠있음 left,right있음*/
+        }
+        .box5{clear: both;}   /*안떠가게 한다(안겹쳐지게한다)*/
+        
+    </style>
+</head>
+
+<body>
+    <div class="box box1"><i>box1</i></div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box box5">box5</div>
+    <div class="box box6">box6</div>
+    <div class="box box7">box7</div>
+</body></html>

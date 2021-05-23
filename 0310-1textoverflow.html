@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+		  rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{position:relative;padding:0; margin:0;}
+		.box{
+            border:1px solid #dddddd;
+			margin:10px;width:300px;
+			font-size:16px;line-height:20px;
+			overflow:hidden;
+			/*넘은글자 생략하기*/
+			text-overflow:ellipsis; /*...표시*/
+		}
+	.box1{height:20px;
+		white-space:nowrap;/*줄변경 안하기*/}
+	.box2{height:60px;/*line-height의 3배*/}
+
+	.box3{
+		/*4가지가 한세트 (높이값X. height:auto;)*/
+		overflow:hidden;
+		display:-webkit-box;
+		-webkit-line-clamp:3; /*일립스가 3번째 줄에 표시된다.*/
+		-webkit-box-orient:vertical;
+	}
+	</style>
+</head>
+<body>
+<h1>줄변경안하기/한줄</h1>
+<div class="box box1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</div>
+<h1>3줄만 보이게(높이를 조절해서)</h1>
+<div class="box box2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</div>
+<h1>(크롬전용) 원하는 줄만큼만 보이도록</h1>
+<div class="box box3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</div>
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+
+</script>

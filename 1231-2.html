@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin:0;}
+        .container{
+            border: 1px solid red; 
+            display: flex;
+/*            옆으로 나열되었을 때 좌우정렬*/
+            justify-content:;
+/*          flex-start  (왼쪽정렬 기본값)         
+            flex-end  (오른쪽정렬)          
+            center     (중앙정렬)**********->가장많이 사용하는 속성
+            space-between (양끝정렬)         
+            space-around (아이템 마진값이 동일하게)    
+            space-evenly (아이템사이 공백이 동일하게)    
+            */
+        }
+        .container .box{width: 100px; height: 100px;}
+        .box1{background: pink;}
+        .box2{background: hotpink;}
+        .box3{background: purple;}
+        .box4{background: beige;}
+        .box5{background: aquamarine;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+</body>
+</html>

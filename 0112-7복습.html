@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .container{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 20px;
+        }
+        .item{border: 1px solid red;}
+        .item img{width: 100%; display: block;}
+        .item1{grid-row: 1/2 span; grid-column: 2;}
+        .item2{grid-row: 3/2 span; grid-column: 1;}
+        .item1 img{height: 100%;}
+        .item2 img{height: 100%;}
+        
+        @media (max-width: 800px){
+            .container{
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 10px;
+/* 하나만 나타나게 하고싶을 때display: block;*/
+            }
+        }
+        
+    </style>
+</head>
+<body>
+<!--       이미지 넣기 전에 포토샵에서 사이즈 조정하기-->
+        <div class="container">
+        <div class="item item1"><img src="1-650x978.jpg" alt=""></div>
+        <div class="item item2"><img src="2-650x978.jpg" alt=""></div>
+        <div class="item item3"><img src="1-650x489.jpg" alt=""></div>
+        <div class="item item4"><img src="2-650x489.jpg" alt=""></div>
+        <div class="item item5"><img src="3-650x489.jpg" alt=""></div>
+        <div class="item item6"><img src="4-650x489.jpg" alt=""></div>
+        <div class="item item7"><img src="5-650x489.jpg" alt=""></div>
+        <div class="item item8"><img src="6-650x489.jpg" alt=""></div>
+        <div class="item item9"><img src="7-650x489.jpg" alt=""></div>
+        <div class="item item10"><img src="8-650x489.jpg" alt=""></div>
+        <div class="item item11"><img src="9-650x489.jpg" alt=""></div>
+        <div class="item item12"><img src="10-650x489.jpg" alt=""></div>
+        <div class="item item13"><img src="11-650x489.jpg" alt=""></div>
+        <div class="item item14"><img src="12-650x489.jpg" alt=""></div>
+        <div class="item item15"><img src="13-650x489.jpg" alt=""></div>
+        <div class="item item16"><img src="14-650x489.jpg" alt=""></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .container{
+            width: 500px; height: 500px;
+            background: yellow;
+            display: flex;
+            justify-content:flex-end;
+            align-items: flex-end;
+        }
+        .container .item{width: 50px; height: 100px;}
+        .container .item1{background: navy;}
+        .container .item2{background: darkturquoise;}
+        
+        
+        .grid-box{
+            display: grid;
+            grid-template-columns: 300px 300px 300px 300px;
+            /*grid-template-columns: repeat(4,300px);*/
+            grid-template-rows: repeat(3, 300px);
+        }
+        .grid-box .item{border: 2px solid black;}
+        .grid-box .item1{background: pink;}
+        .grid-box .item2{background: #fdffbc;}
+        .grid-box .item3{background: #ffeebb;}
+        .grid-box .item4{background: #ffdcb8;}
+        .grid-box .item5{background: #ff7b54;}
+        .grid-box .item6{background: #ffb26b;}
+        .grid-box .item7{background: #ffd56b;}
+        .grid-box .item8{background: #939b62;}
+        .grid-box .item9{background: #a3ddcb;}
+        .grid-box .item10{background: #e8e9a1;}
+        .grid-box .item11{background: #e6b566;}
+        .grid-box .item12{background: #e5707e;}
+        
+    </style>
+</head>
+<body>
+    <h1 class="title">GRID</h1>
+    <p>줄과 칸으로 이루어진 격자무늬 형식 속성</p>
+    
+    <div class="grid-box">
+        <div class="item item1">ITEM1</div>
+        <div class="item item2">ITEM2</div>
+        <div class="item item3">ITEM3</div>
+        <div class="item item4">ITEM4</div>
+        <div class="item item5">ITEM5</div>
+        <div class="item item6">ITEM6</div>
+        <div class="item item7">ITEM7</div>
+        <div class="item item8">ITEM8</div>
+        <div class="item item9">ITEM9</div>
+        <div class="item item10">ITEM10</div>
+        <div class="item item11">ITEM11</div>
+        <div class="item item12">ITEM12</div>
+    </div>
+    
+        <h1 class="title">FLEX</h1>
+    <div class="flex container">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+    </div>
+   
+</body>
+</html>

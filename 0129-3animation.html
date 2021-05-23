@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{position:relative;padding:0; margin:0;}
+        .item{width:100px; height:100px;}
+        .item1{background:red;
+        animation-name:ani-name;/*사용할 애니메이션이름*/
+        animation-duration: 4s;/*애니메이션 실행시간*/
+        animation-delay: 0.5s;/*애니메이션 지연시간*/
+        animation-iteration-count: 5;/*애니메이션실행 횟수(기본값:1)*/
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-fill-mode:forwards;
+        }
+        .item2{background:orange;
+        animation:ani-name 1s infinite;
+        }
+        .item3{background:gold; 
+            animation:ani-name 1s infinite cubic-bezier(0.075, 0.82, 0.165, 1)}
+        .item4{background:green;
+        animation:ani-name 1s reverse infinite;}
+        .item5{background:blue;}
+
+        /*애니메이션은 키프레임즈로 만듬.*/
+        @keyframes ani-name{
+            0%{left:0;}
+            100%{left:400px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+    <div class="item item4"></div>
+    <div class="item item5"></div>
+</body>
+</html>

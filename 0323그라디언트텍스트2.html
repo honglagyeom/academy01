@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family: 'Merriweather', serif;
+            font-size: 300px; 
+            font-weight: 900; 
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 300px;
+            background-image: linear-gradient(90deg,#440a67 10%,#b4aee8 10%);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: color-move 10s infinite;
+        }
+        
+        @keyframes color-move{
+            0%{ background-image: linear-gradient(90deg,#440a67 10%,#b4aee8 10%);}
+            100%{ background-image: linear-gradient(90deg,#440a67 90%,#b4aee8 90%);}
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>gradient</h1>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    var a="3"
+    $("h1").text(a.padStart(4,"0"))
+    
+    //3을 4자리로 나타내고 싶을 때 나머지자리는 0으로 채우기
+</script>
+

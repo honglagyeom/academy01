@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .container{
+            border: 1px solid black;
+            width: 640px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            grid-template-rows: 200px 200px 200px;
+            grid-gap: 20px;
+        }
+        .container .item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 30px;
+        }
+        .container .item1{
+            grid-column: span 2;
+            background: #cee397;}
+        .container .item2{
+            grid-row: span 2;
+            background: #8db596;}
+        .container .item3{
+            background:#f9e0ae;
+            grid-row: span 2;}
+        .container .item4{background: #583d72;}
+        .container .item5{
+            grid-column: 2 span;
+            background: #ffba93;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item4</div>
+        <div class="item item4">item5</div>
+        <div class="item item5">item3</div>
+
+    </div>
+</body>
+</html>

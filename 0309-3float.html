@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;position: relative;}
+        .left-group{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .box4{
+            width: 100px;
+            height: 200px;
+            background-color: orangered;
+            float: left;
+        }
+        .clear{clear: both;}
+        .box1{
+            width: 200px; height: 100px;
+            background-color: greenyellow;
+        }
+        .box23-group{
+            width: 200px; height: 100px;
+        }
+        .box2{
+            width: 100px ; height: 100px;
+            background-color: gold;
+            float: left;
+        }
+        .box3{
+            width: 100px ; height: 100px;
+            background-color: #0093ff;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>float사용하기(float랑 clear는 항상SET!!!)</h1>
+    <div class="left-group">
+        <div class="box1">1</div>
+        <div class="box23-group">
+            <div class="box2">2</div>
+            <div class="box3">3</div>
+        </div>
+    </div>
+    <div class="box4">4</div>
+    <div class="clear"> clear가 존재해야지 태그가 겹치거나 내용이 겹치거나 하는 일이 없음</div>
+</body>
+</html>

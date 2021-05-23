@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+		  rel="stylesheet">
+	<!--부트스트랩 css연결-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{position:relative;padding:0; margin:0;}
+		.main-slide{width:100%;height:800px;
+			border:10px solid black;
+		}
+		.section{display:flex;}
+		.section .item{width:33vw;height:33vw}
+		.item-left{border:10px solid black;}
+		#aa{height:100%;overflow:hidden}
+		#aa .item{height:100%;overflow:hidden}
+		#aa .item img{height:100%;object-fit:cover;object-position:center center;}
+	</style>
+</head>
+<body>
+<div class="main-slide">
+<!--슬라이드 시작-->
+	<div class="carousel slide" data-ride="carousel" id="aa">
+		<ol class="carousel-indicators">
+			<li data-target="#aa" data-slide-to="0" class="active"></li>
+			<li data-target="#aa" data-slide-to="1"></li>
+			<li data-target="#aa" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="item active"><img src="boot-img/slider-img-3.jpg"></div>
+			<div class="item"><img src="boot-img/slider-img-1.jpg"></div>
+			<div class="item"><img src="boot-img/slider-img-2-4.jpg"></div>
+		</div>
+
+		<a href="#aa" class="left carousel-control" role="button" data-slide="prev" ></a>
+		<a href="#aa" class="right carousel-control" role="button" data-slide="next" ></a>
+	</div>
+<!--슬라이드 끝-->
+</div>
+
+<p>공백 섹션</p>
+<section class="section">
+	<div class="item item-left">
+
+
+
+	</div>
+	<div class="item item-right"></div>
+
+</section>
+
+
+</body>
+</html>
+<!--제이쿼리연결-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!--부트스트랩 자바스크립트 연결-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>
+$("#aa").carousel({
+	interval:1000,
+	keyborad:false
+})
+
+</script>

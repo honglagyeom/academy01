@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; position: relative;}
+        .container{
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid; grid-gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-flow: dense;
+        }
+        .item img{width: 100%; display: block;}
+        .item{border: 1px solid red;}
+        .item1{
+            grid-row:span 2; 
+            grid-column: 2;}
+        .item2{grid-row: 3/ span 2; grid-column: 1;}
+        .item1 img{height: 100%; object-fit: cover;}
+        .item2 img{height: 100%; object-fit: cover;}
+        /*미디어쿼리(반응형 디자인)*/
+        @media (max-width: 1100px){
+            .container{
+                grid-gap:20px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        }
+/*
+        @media (max-width: 500px){
+            .container{display: block;}
+            .item{margin-bottom: 10px;}
+        }
+    
+*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1"><img src="1-650x978.jpg" alt=""></div>
+        <div class="item item2"><img src="2-650x978.jpg" alt=""></div>
+        <div class="item item3"><img src="1-650x489.jpg" alt=""></div>
+        <div class="item item4"><img src="2-650x489.jpg" alt=""></div>
+        <div class="item item5"><img src="3-650x489.jpg" alt=""></div>
+        <div class="item item6"><img src="4-650x489.jpg" alt=""></div>
+        <div class="item item7"><img src="5-650x489.jpg" alt=""></div>
+        <div class="item item8"><img src="6-650x489.jpg" alt=""></div>
+        <div class="item item9"><img src="7-650x489.jpg" alt=""></div>
+        <div class="item item10"><img src="8-650x489.jpg" alt=""></div>
+        <div class="item item11"><img src="9-650x489.jpg" alt=""></div>
+        <div class="item item12"><img src="10-650x489.jpg" alt=""></div>
+        <div class="item item13"><img src="11-650x489.jpg" alt=""></div>
+        <div class="item item14"><img src="12-650x489.jpg" alt=""></div>
+        <div class="item item15"><img src="13-650x489.jpg" alt=""></div>
+        <div class="item item16"><img src="14-650x489.jpg" alt=""></div>
+    </div>
+</body>
+</html>

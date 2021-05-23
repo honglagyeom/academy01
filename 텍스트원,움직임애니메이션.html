@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{position:relative;padding:0; margin:0;}
+        body{background:black;}
+        .item{width:100px;height:100px;background:gold;
+            position:absolute; left:0; top:0;
+            animation:aa 5s infinite;
+    }
+        @keyframes aa{
+            0%{left:0; top:0; background:gold;}
+            25%{left:200px; top:0;background:forestgreen;}
+            50%{left:200px;top:200px;background:hotpink}
+            75%{left:0;top:200px; background:indianred}
+            100%{left:0; top:0; background:gold;}
+        }
+        .menu {
+            position:fixed; 
+            left:30px; bottom:30px;
+            animation:rotate 20s linear infinite;
+        }
+        @keyframes rotate{
+            0%{transform:rotate(0deg)}
+            100%{transform:rotate(360deg)}
+        }
+    </style>
+</head>
+<body>
+    <div class="menu"><img src="1.png"></div>
+    <div class="item"></div>
+</body>
+</html>

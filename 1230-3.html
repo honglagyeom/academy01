@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .a{
+            display: flex;
+            margin: 0 auto;
+            width: 500px;
+            /* 제일 위에 있는 선택자한테 width를 안주면 margin을 줘도 center로 안맞춰짐
+            왜냐하면 자동으로 전체width를 갖기때문에 여백이 의미가 없어져버림 */
+        }
+        .a .box1{
+            height: 400px;
+            width: 300px; 
+            background: red;
+            
+            }
+        .a .box2{
+            height: 250px;
+            width: 100px;
+            background: #5fe93d;
+            margin-left: 2px;
+            
+        }
+        .a .box3{
+            height: 250px;
+            width: 100px;
+            background: green;
+            margin-left: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

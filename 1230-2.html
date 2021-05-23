@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체선택자 */
+        *{padding: 0;margin: 0;}
+        /* 태그선택자 */
+        div{padding: 20px;}
+        /* 클래스선택자 */
+        .a{
+            border: 1px solid red;
+            width: 500px;
+            margin: 10px auto;
+            /* 옆으로 나열해주는 css속성 */
+            display: flex;
+            
+            }
+
+        /* '>'는 한단계아래있는 자식 , 공백은 줄줄이 밑에 자손다 포함 */
+        /* 자손선택자 *(공백필요)*/
+        .a .box1{
+            background: pink;
+            width: 100px;
+            height: 100px;
+            }
+        .a .box2{
+            background: plum;
+            width: 100px;
+            height: 100px;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <!-- 
+    block 속성tag(위아래로 나열됨: 줄바꿈이 자동/옆으로나열x)
+    h1,p,div,li,ul,ol,   -->
+
+    <div class="a">
+        <div class="box1">박스1</div>
+        <div class="box2">박스2</div>
+    </div>
+</body>
+</html>

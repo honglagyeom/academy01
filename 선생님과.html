@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;position: relative;}
+        .box{
+            width: 700px;
+            border: 1px solid red;
+            height: 100px;
+            margin: 100px auto;
+            overflow: ;
+        }
+        .box span{
+            position: absolute;
+            display: inline-block;
+            font-size: 80px;
+            white-space: nowrap;/* 텍스트가 다음줄로 넘어가지않게*/
+            text-transform: uppercase;
+/*  여기서 맞추고 밑에 애니메이션 작성할 때 써주기*/
+        }
+        .a{
+            background: rgba(255, 215, 0, 0.26);
+            animation: aa 5s infinite linear;   
+            transform: translate(0,0);
+        }
+        
+        @keyframes aa{
+            0%{transform: translate(0,0);}
+            100%{transform: translate(calc(-100% +700px));}
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="a">redsponsive web design web design and aed publishing class</span>
+        <span class="b">redsponsive web design web design and aed publishing class</span>
+    </div>
+</body>
+</html>

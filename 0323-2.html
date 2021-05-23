@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+		  rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{position:relative;padding:0; margin:0}
+		.btn{position:fixed; padding:10px; top:20px; left:20px;z-index:10;width:100px;}
+		.main{position:fixed; width:80%; height:80vh; border:1px solid red;
+		top:10vh; left:10%;
+		}
+		.main .page{ text-transform:uppercase;color:white;
+		font-size:200px;width:100%; height:100%;
+		display:flex;align-items:center;justify-content:center;
+			position:absolute;left:0; top:100%;
+		}
+		.page1{background-color:darkred}
+		.page2{background-color:orangered}
+		.page3{background-color:gold}
+		.page4{background-color:forestgreen}
+		.page5{background-color:dodgerblue}
+		.page6{background-color:navy}
+		.page7{background-color:darkorchid}
+	</style>
+</head>
+<body>
+<button class="btn">다음</button>
+<div class="main">
+	<div class="page page1">red</div>
+	<div class="page page2">orange</div>
+	<div class="page page3">yellow</div>
+	<div class="page page4">green</div>
+	<div class="page page5">blue</div>
+	<div class="page page6">navy</div>
+	<div class="page page7">violet</div>
+</div>
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+
+var active_num=0;
+appear()
+//나타나는 함수
+function appear(){
+	$(".page").eq(active_num).css({top:"100%"})
+	$(".page").eq(active_num).stop().animate({top:0},1000,function(){
+		$(this).addClass("visible")
+	})
+}
+//사라지는 함수
+function disapear(){
+	$(".visible").stop().animate({top:-100+"%"},function(){
+		$(this).removeClass("visible")
+	})
+}
+
+$(".main").on("mousewheel",function(e){
+	e.preventDefault();
+	delta=e.originalEvent.wheelDelta;
+	page_moving=$(".page").is(":animated");
+	console.log(delta);
+	if(delta<0 && !page_moving){
+		active_num++;
+		active_num=active_num%7
+		disapear()
+		setTimeout(appear,400)
+	}else if(delta>0 && !page_moving){
+		active_num--;
+		active_num=active_num%7
+		disapear()
+		setTimeout(appear,400)
+	}
+})
+
+
+
+$(".btn").click(function(){
+	active_num++;
+	active_num=active_num%7
+	disapear()
+	setTimeout(appear,400)
+})
+</script>

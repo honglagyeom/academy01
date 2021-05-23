@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0; }
+        .wrap{ 
+             /* 부모클래스선택자에 너비를 설정해야하는구나 */
+                    width: 400px;
+                    margin: 0 auto;
+                    }
+             /* 왜 div에 width설정하면 box1은 적용이안되는걸까? */
+        .wrap > div{text-transform: uppercase;}
+        .wrap > .box1{
+                    background: gray;
+                    text-align: right;
+                    }
+        .wrap > .box{
+                    text-align: center;
+                    padding: 30px;
+                    margin-top: 3px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+
+        }
+        .box2{background: #5ad8b3;}
+        .box3{background: #ff9c6c;}
+        .box4{background: #408080;}
+        .box5{background: #8080ff;}
+        .box6{background: yellowgreen;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1">12:00</div>
+        <div class="box box2">about</div>
+        <div class="box box3">company</div>
+        <div class="box box4">service</div>
+        <div class="box box5">customer</div>
+        <div class="box box6">downloader</div>
+    </div>
+</body>
+</html>

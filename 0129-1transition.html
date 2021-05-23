@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거버튼으로 연습</title>
+    <style>
+        *{padding:0; margin:0; position:relative;}
+        .ham-btn{position:fixed; right:30px; top:30px; cursor: pointer;
+        border:1px solid red;
+        width:80px; height:80px;
+        display: block;
+        transform: scale(1);
+        background:white;
+        /**Transition 여러가지 속성
+        transition-property: transform; 속성값(기본값): ALL
+        transition-duration: 1s;  실행시간(기본값이 없기때문에 꼭 모션시간을 작성해야한다.) 
+        transition-delay:0s;  실행 지연시간(기본값): 0s
+        transition-timing-function:cubic-bezier(1,-1.04,0,2.16); 
+       속도변화값(기본값):ease  ,linear(일정한속도),큐빅베지어  https://cubic-bezier.com/
+        */
+        transition:transform 0.3s cubic-bezier(1,-1.04,0,2.16) , background 3s;
+
+        }
+        .ham-btn:hover{background:red; transform: scale(1.3);}
+        .ham-btn:hover .bar{background:white;}
+        .ham-btn .bar{
+            display: block;
+            background:red;
+            position:absolute;
+            width:50px;
+            height:4px;
+            left:calc(50% - 25px);
+            top:calc(50% - 2px) ;
+            transition:0.3s;
+        }
+/*        기준값*/
+        .ham-btn .bar1{transform: translate(0,-10px) rotate(0deg);}
+        .ham-btn .bar2{transform:scaleX(1);}
+        .ham-btn .bar3{transform: translate(0,10px) rotate(0deg);}
+        
+/*        변화값*/
+        #btn:checked~.ham-btn .bar1{transform:translate(0,0) rotate(405deg); transition:0.4s 0.3s;}
+        #btn:checked~.ham-btn .bar2{transform:scaleX(0); transition:0.2s;}
+        #btn:checked~.ham-btn .bar3{transform:translate(0,0) rotate(-405deg); transition:0.4s 0.3s;}
+/*   transition:0.4s 0.3s; 앞에껀 실행시간 뒤에껀 지연시간*/
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="btn">
+    <label class="ham-btn" for="btn">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+    </label>
+</body>
+</html>

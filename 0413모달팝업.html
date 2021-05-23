@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0; position: relative;}
+        
+/*        첫화면 */
+        .alert{
+            position: fixed;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: calc(100% - 50px); 
+            max-width: 400px;
+        }
+        .alert .bg{
+            background: linear-gradient(90deg,skyblue,#0b8888);
+            background: linear-gradient(90deg,#dc2d50,#810000);
+            border-radius: 10px;
+            padding-bottom: 8px;
+        }
+        .alert .top-bar{
+            color: white;
+            height: 40px;
+        }
+        .alert .top-bar>*{position: absolute;}
+        .alert .top-bar>div{
+            font-size: 25px;
+            left: 20px;
+            line-height: 40px;
+        }
+        .alert .top-bar .warning{display: none;}
+        .alert .top-bar .confirm{}
+        .alert .top-bar .close-btn{
+            border: 2px solid white;
+            right: 15px;
+            display: block;
+            top: 8px;
+            width: 25px;
+            height: 25px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .alert .top-bar .close-btn::before,.alert .top-bar .close-btn::after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 14px;
+            top: 45%;
+            left: 18%;
+            transform: translate(-50%,-50%);
+            height: 2px;;
+            background: white;
+        }
+        .alert .top-bar .close-btn::before{transform: rotate(45deg) ;}
+        .alert .top-bar .close-btn::after{transform: rotate(-45deg);}
+        .alert .message{
+            background: white;
+            border-radius: 15px;
+            height: 130px;
+            width: calc(100% - 20px);
+            margin: 0px auto;
+            display: flex;
+        }
+        .alert .message>div{}
+        .alert .message .left{
+            flex:1;
+        }
+        .alert .message .left img{position: absolute; top: 0; left: 0; width: 80%;}
+        .alert .message .left img.img-warn{padding: 15px 10px;}
+        .alert .message .left img.img-conf{display: none; padding: 15px 10px;}
+        .alert .message .right{flex: 2;}
+        .alert .message .right>div{position: absolute;}
+        .alert .message .right .text-warn{
+            padding: 15px 6px 10px 0px;
+            font-weight: 700;
+            line-height: 25px;
+            font-size: 15px;
+            left: -5px;
+        }
+        .alert .message .right .text-warn p{
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 25px;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .alert .message .right .text-warn img{width: 15px;}
+        .alert .message .right .text-conf{font-size: 15px; font-weight: 700; padding: 15px 10px; display: none;}
+        .alert .message .right .text-conf img{}
+    </style>
+</head>
+<body>
+    <h1>개인사이트나 사이트 첫페이지에 팝업(크롬일때/익스플로러나 사파리등 일때)</h1>
+    
+    <!--    브라우저 경고메세지 -->
+    <div class="alert" id="alert">
+        <div class="bg">
+            <div class="top-bar">
+                <div class="warning">WARNING MESSAGE</div>
+                <div class="confirm">CONFIRM MESSAGE</div>
+                <span class="close-btn"></span>
+            </div>
+            <div class="message">
+                <div class="left">
+                    <img src="alert.png" class="img-warn">
+                    <img src="check.png" class="img-conf">
+                </div>
+                <div class="right">
+                    <div class="text-warn">
+                    <p>warning</p>
+                    웹표준을 일부 지원하지 않는 브라우저입니다.<br> <img src="chrome.png">크롬브라우저 사용을 권장합니다.</div>
+                    <div class="text-conf">이사이트는 웹표준을 준수하여 제작되었고,<br>Chrome 1920*1080에 최적화되어있습니다.<br>이창은 3초뒤에 사라집니다.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

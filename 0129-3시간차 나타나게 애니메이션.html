@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>나타나게</title>
+    <style>
+        *{padding: 0; margin: 0; position: relative;}
+        .item{
+            width: 200px;
+            height: 60px;
+            margin: 20px auto;
+            opacity: 0; /*키포인트*/
+        }
+        .item1{
+            background: #28806b;
+            animation: ani-name 0.5s forwards;
+        }
+        .item2{
+            background: pink;
+            animation: ani-name 0.5s 0.5s forwards;
+        }
+        .item3{
+            background: skyblue;
+            animation: ani-name 0.5s 1s forwards;
+        }
+        .item4{
+            background: #87a2eb;
+            animation: ani-name 0.5s 1.5s forwards;
+        }
+        .item5{
+            background: #1c3a8b;
+            animation: ani-name 0.5s 2s forwards; 
+            /*애니메이션이름 실행시간 지연시간 마지막상태*/
+        }
+        
+/*      애니메이션 만들기 이름은 아무렇게나 설정*/
+        @keyframes ani-name{
+            0%{opacity: 0;}
+            100%{opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <h1>나타나게</h1>
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+    <div class="item item4"></div>
+    <div class="item item5"></div>
+</body>
+</html>

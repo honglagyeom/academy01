@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{position:relative;padding:0; margin:0;}
+		/*첫화면*/
+		.alert .bold{font-weight:900; letter-spacing:1px}
+		.alert{
+			font-family: 'Noto Sans KR', sans-serif;
+			position:fixed;top:50%;left:50%;
+			transform:translate(-50%, -50%);
+			width:calc(100% - 50px); max-width:500px;
+		}
+		.alert .bg{
+			background:linear-gradient(90deg,#2ec4d5, #167da9);
+/*			background:linear-gradient(90deg,#dc2d50, #cc0000);*/
+			border-radius:15px;
+			padding-bottom:5px;
+
+		}
+		.alert .top-bar{ color:white;
+		height:40px;}
+		.alert .top-bar>*{position:absolute;}
+		.alert .top-bar>div{left:20px;line-height:40px;}
+		.alert .top-bar .warning{display: none;}
+		.alert .top-bar .confirm{}
+		.alert .top-bar .close-btn{
+            cursor: pointer;
+			display:block;top:7px;right:10px;
+			width:20px;height:20px;
+			border-radius:50%;
+			border:3px solid white;}
+		.alert .top-bar .close-btn::before,
+		.alert .top-bar .close-btn::after{
+			content:'';display:block;
+			position:absolute;top:50%; left:50%;
+			width:15px; height:3px;
+			background:white;border-radius:2px;
+		}
+		.alert .top-bar .close-btn::before{
+			transform:translate(-50%,-50%) rotate(45deg)}
+		.alert .top-bar .close-btn::after{
+			transform:translate(-50%,-50%)  rotate(-45deg)}
+		.alert .message{
+			background:white;
+			border-radius:12px;
+			width:calc(100% - 10px);
+			margin:0px auto;
+			display:flex;
+		}
+		.alert .message .left{flex:1;}
+		.alert .message .left img{ position:absolute;
+		left:20px;
+		width:80%; top:50%; transform:translate(0,-50%)}
+		.alert .message .left img.img-warn{display: none;}
+		.alert .message .left img.img-conf{}
+		.alert .message .right{
+			min-height:150px;
+			flex:2; margin-left:20px;
+		height:100%;
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items:flex-start;
+			color:#666666;
+		}
+		.alert .message .right>div{
+			font-weight:500;
+		}
+        .alert .message .right .text-warn{display: none;}
+        .alert .message .right .text-conf{}
+
+		.alert .message .right .bold{ color:black; display:block}
+		.alert .message .right img{display:inline-block; width:21px;top:5px;}
+	</style>
+</head>
+<body>
+<h1>개인사이트나....사이트 첫페이지</h1>
+
+
+<!--브라우져 경고 메세지-->
+<div class="alert" id="alert">
+	<div class="bg">
+		<div class="top-bar">
+			<div class="warning"><span class="bold">WARNING</span> MESSAGE</div>
+            <div class="confirm"><span class="bold">CONFIRM</span> MESSAGE</div>
+			<span class="close-btn"></span>
+		</div>
+		<div class="message">
+			<div class="left">
+				<img src="2.png" class="img-warn">
+				<img src="1.png" class="img-conf">
+			</div>
+			<div class="right">
+				<div class="text-warn">
+					<span class="bold">WARNING</span>
+					웹표준을 일부 지원하지 않는 브라우저 입니다.<br>
+					<span><img src="0.png">크롬 브라우저</span> 이용을 권장합니다
+				</div>
+				<div class="text-conf">
+                    <span class="bold">CONFIRM</span>
+				    포트폴리오 사이트는 Chrome 1920*1080에 최적화 되어 있습니다</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    var uAgent=navigator.userAgent.toLocaleLowerCase();
+    console.log(uAgent)
+    //console.log(uAgent.indexOf("chrome"))
+    //console.log(uAgent.indexOf("edg"))
+    // && uAgent.indexOf("edg")==-1 엣지글자가 없는 경우 (엣지에서 사이트가 잘 열리지 않으면 조건문 추가하기)
+    //크롬글자가 나타나있는 경우 조건문
+    if(uAgent.indexOf("chrome")!=-1){
+        console.log("크롬브라우저임.")
+//        document.getElementsByClassName("warning")[0].style.display="none"
+//        document.getElementsByClassName("confirm")[0].style.display="block"
+        $(".alert .bg").css({background:"linear-gradient(90deg,#2ec4d5, #167da9)"})
+        $(".warning,.img-warn,.text-warn").css({display:"none"})
+        $(".confirm,.img-conf,.text-conf").css({display:"block"})
+    } else{
+        console.log("크롬이 아님")
+        $(".alert .bg").css({background:"linear-gradient(90deg,#dc2d50, #cc0000)"})
+        $(".warning,.img-warn,.text-warn").css({display:"block"})
+        $(".confirm,.img-conf,.text-conf").css({display:"none"})
+    }
+    
+    /*
+    var A="안녕하세요 반갑습니다."
+    A.indexOf("방") ---> "6"번째 (순번값 출력)
+    A.indexOf("참") ---> "-1" (없는 경우)
+    */
+    
+    $(".close-btn").click(function(){
+        $(".alert").stop().fadeOut();
+    })
+    
+    //시간3초가 지나면 사라지도록 setinterval
+    setTimeout(function(){
+        $(".alert").stop().fadeOut();
+    },2500)
+    
+    
+    
+    var a="red" /*변수: 값이 한개*/
+    var bg=["red","orange","gold"] /*배열: 값을 여러개 나열한 것*/
+    var bg2=new Array("red","orange","gold")/*배열*/
+    
+    /*객체: 메소드(함수), 속성, */
+    
+    //$("body").css({background:bg[2]})
+    
+    var uAgent = navigator.userAgent.toLowerCase(); 
+
+    var mobilePhones = new Array('iphone','ipod','android','blackberry','windows ce','nokia','webos','opera mini','sonyericsson','opera mobi','iemobile');
+
+    for (var i=0; i < mobilePhones.length; i++) { 
+        if(uAgent.indexOf(mobilePhones[i]) != -1) { 
+            //위 목록중에 하나라도 있으면 네이버로 연결한다 
+            document.location.href = "https://www.naver.com/"; 
+        } 
+    } 
+
+    
+    
+</script>

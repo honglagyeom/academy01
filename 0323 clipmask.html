@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{position: relative;}
+        .mask{
+            border: 10px solid black;
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            clip-path:polygon(0 500px,250px 0,500px 500px); 
+/*           ()꼭지점 좌표 차례로 써주기 사이트활용 북마크*/
+        }
+        .mask img{
+/*            opacity: 0.7;*/
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="mask">
+        <img src="img1.png">
+    </div>
+</body>
+</html>

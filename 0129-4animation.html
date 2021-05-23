@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0; position:relative;}
+        .item{width:300px; height:100px; margin:20px auto; opacity: 0;}
+        .item1{background:red; animation:aa 0.5s forwards;}
+        .item2{background:orange; animation:aa 0.5s 0.5s  forwards;}
+        .item3{background:green; animation:aa 0.5s 1s forwards;}
+        .item4{background:gold;animation:aa 0.5s 1.5s forwards;}
+        .item5{background:violet;animation:aa 0.5s 2s forwards}
+
+@keyframes aa{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+    <div class="item item4"></div>
+    <div class="item item5"></div>
+</body>
+</html>

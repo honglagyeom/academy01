@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상단 메뉴상자 만들기</title>
+    <style>
+        *{margin: 0; padding: 0; list-style: none;}
+        .header{background: yellow;}
+        .header .container{
+            border: 4px solid red;
+            width: 1200px; margin: 0 auto;
+            display: flex;
+            justify-content: space-between;/*양끝정렬*/
+        }
+        .header .container>*{border: 3px solid blue;}
+        .header .menu{display: flex;}
+        .header .menu-li{padding: 20px 30px;}
+        /*SECTION1*/
+        .section1{height: 700px; background: green;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .section1 .text-group{text-align: center; color: white;}
+        .section1 .text-group h1{}
+        .section1 .text-group h2{}
+        .section1 .text-group .bnt{width: 200px; background: red; padding:20px; margin: 10px auto; }
+        /*footer1*/
+        .footer1{background: #f5f4f4;}
+        .footer1 .container{
+            border: 5px solid gold;
+            max-width:1200px;/*최대 너비값 페이지확대해도 이이상 커지지않아*/
+            margin: 0 auto;
+            display: flex;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .footer1 .item{width: 25%;}
+        .footer1 .item1{background: red;}
+        .footer1 .item2{background: pink;}
+        .footer1 .item3{background: blue;}
+        .footer1 .item4{background: purple;}
+        /*footer2*/
+        .footer2{background: #0a043c;}
+        .footer2 .contents{
+            max-width: 1200px;
+            border: 2px solid pink;
+            margin:  0 auto; /*박스값 알아서 중앙으로 배치 너비와set*/
+            display: flex;
+            justify-content: space-between;
+            color: white;
+        }
+        .footer2 .text{font-size: 15px; padding: 30px 0;}
+        .footer2 .icon-group{display: flex;}
+        .footer2 .icon-group .icon{
+            margin: 20px 0;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">LOGO</div>
+            <ol class="menu">
+                <li class="menu-li">menu1</li>
+                <li class="menu-li">menu2</li>
+                <li class="menu-li">menu3</li>
+                <li class="menu-li">menu4</li>
+                <li class="menu-li">menu5</li>
+            </ol>
+        </div>
+    </div>
+    <div class="section1">
+        <div class="text-group">
+            <h1>PREMIUM WORDPRESS HOSTING</h1>
+            <h2>Speed Up ＆ Leave Your Competition Behind</h2>
+            <div class="bnt">SEE OUR PLANS</div>
+        </div>
+    </div>
+    <div class="footer1">
+        <div class="container">
+            <div class="item item1">로고</div>
+            <div class="item item2">주소</div>
+            <div class="item item3">연락처</div>
+            <div class="item item4">서치</div>
+        </div>    
+    </div>
+    <div class="footer2">
+        <div class="contents">
+            <div class="text">
+            Copyright 2012 - 2016 Avada Theme by Theme Fusion   |   All Rights Reserved   |    Powered by WordPress
+            </div>
+            <div class="icon-group">
+                <div class="icon icon1">1</div>
+                <div class="icon icon2">2</div>
+                <div class="icon icon3">3</div>
+                <div class="icon icon4">4</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

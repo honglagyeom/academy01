@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0; position: relative;}
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .box1{
+            background: red;
+            animation-name: ani-name; /*사용할 애니메이션이름*/
+            animation-duration: 4s;/*애니메이션 실행시간*/
+            animation-delay: 0.5s;/*애니메이션 지연시간 ~후에 실행하게끔*/
+            animation-iteration-count: 5;/*애니메이션 실행 횟수 (기본값1) ,infinite는 무한반복*/
+            animation-timing-function: linear;/*ease가 기본값,큐빅비지어 / linear는 일정한 속도로 */
+            animation-direction: alternate;/*normal이 기본값, reverse는 반대*/
+            animation-fill-mode: forwards;/*backword가 기본값 :원래 상태로 돌아오는것, forwards는 100%위치값에멈춤*/
+            
+        }
+        
+        .box2{
+            background: orange;
+            animation: ani-name 1s 3; /*3번반복*/
+        }
+        .box3{
+            background: yellow;
+            animation: ani-name 1s infinite cubic-bezier(.02,.96,.76,-0.67);
+        }
+        .box4{
+            background: green;
+            animation: ani-name 1s reverse infinite;
+        }
+        .box5{background: blue;}
+/*        애니메이션은 키프레임즈로 만듦*/
+        @keyframes ani-name{
+            0%{left: 0;}
+            100%{left: 400px;}
+        } 
+        
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+</body>
+</html>

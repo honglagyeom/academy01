@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .btn {
+            position: fixed;
+            padding: 10px;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            width: 100px;
+        }
+/*        다만들고 main에다가 overflow:hidden      */
+        .main {
+            position: fixed;
+            width: 80%;
+            height: 80vh;
+            border: 1px solid red;
+            top: 10vh;
+            left: 10%;
+            overflow: hidden;
+        }
+
+        .main .page {
+            text-transform: uppercase;
+            color: white;
+            font-size: 100px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 100%; 
+/*         메인에서 안보이게 top:100설정  */
+        }
+
+        .page1 {
+            background-color: darkred;
+        }
+
+        .page2 {
+            background-color: orange;
+        }
+
+        .page3 {
+            background-color: gold;
+        }
+
+        .page4 {
+            background-color: forestgreen;
+        }
+
+        .page5 {
+            background-color: deepskyblue;
+        }
+
+        .page6 {
+            background-color: navy;
+        }
+
+        .page7 {
+            background-color: darkorchid;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">다음</button>
+    <div class="main">
+        <div class="page page1">red</div>
+        <div class="page page2">orange</div>
+        <div class="page page3">yellow</div>
+        <div class="page page4">green</div>
+        <div class="page page5">blue</div>
+        <div class="page page6">navy</div>
+        <div class="page page7">purple</div>
+    </div>
+
+
+
+</body></html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    var active_num
+    active_num=0
+    appear()
+    
+    //나타나는 함수
+    function appear(){
+       $(".page").eq(active_num).css({top:"100%"})
+        $(".page").eq(active_num).stop().animate({top:0},1000,function(){
+            $(this).addClass("visible")
+        }) //시간,가속도, 그 시간동안 일어나는 기능
+    }
+    
+    //사라지는 함수
+    function disappear(){
+        $(".visible").stop().animate({top:-100+"%"},function(){
+            $(this).removeClass("visible") //기본값400동안 함수실행
+        })
+    }
+    
+    
+    $(".main").on("mousewheel",function(e){
+        e.preventDefault();
+        delta=e.originalEvent.wheelDelta
+        page_moving=$(".page").is(":animated")
+        console.log(delta)
+        if(delta<0 && !page_moving){
+            active_num++;
+            active_num=active_num%7
+            disappear()
+            setTimeout(appear,400)
+        } else if(delta>0 && !page_moving){
+            active_num--;
+            active_num=active_num%7
+            disappear()
+            setTimeout(appear,400)
+        }
+    })
+    
+    $(".btn").click(function(){
+        active_num++;
+        active_num=active_num%7
+        disappear()
+        setTimeout(appear,400) //400뒤에 appear실행
+    })
+    
+    
+    
+    
+</script>
